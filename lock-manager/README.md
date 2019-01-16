@@ -1,40 +1,5 @@
 # Project 5: Lock Manager
 
-## Logistics
-**Due date: Saturday 4/28/2018, 11:59:59 PM**
-
-* This is your last homework for CS 186 -- you're almost done!
-* Please make sure you submit to the correct branch, or your work will not be
-  graded.
-  
-# Getting Started
-First, open up Virtual Box and power on the CS186 virtual machine. Once the
-machine is booted up, open a terminal and go to the `course-projects` folder
-you created in hw0.
-```
-$ cd course-projects
-```
-Make sure that you switch to the master branch:
-```
-$ git checkout master
-```
-It is good practice to run `git status` to make sure that you haven't
-inadvertently changed anything in the master branch.  Now, you want to add the
-reference to the staff repository so you call pull the new homework files:
-```
-$ git fetch staff master
-$ git merge staff/master master
-```
-The `git merge` will give you a warning and a merge prompt if you have made any
-conflicting changes to master.
-
-As with hw1, hw2, hw3, and hw4, make sure you create a new branch for your work:
-```
-git checkout -b hw5
-```
-Now, you should be ready to start the homework. *Don't forget to push to this
-branch when you are done with everything!*
-
 ## API Overview
 You will be implementing the logic for table and page-level locking. The goal of
 this project is to test your understanding of locking fundamentals. 
@@ -44,9 +9,6 @@ Requests to these objects are handled sequentially and atomically by that servic
 (In many database systems, these objects are shared across database engine
 threads, and hence require additional logic to manage their concurrent data
 structures. We have abstracted that problem away for you.)
-
-**NOTE:** Please do not change any of the interfaces that we've given you. It's
-also a good idea to always check Piazza for updates on the project.
 
 * Transactions are represented through the `Transaction` class.
 * There are two types of resources (see the `Resource` class) on which transactions can obtain locks: 
@@ -129,14 +91,3 @@ Throw an `IllegalArgumentException` in any of the following error cases:
 Next, you will implement `LockManager#holds`. This should be short, as it is
 just checking if a given transaction holds a lock of a given type on a given
 resource.
-
-After you complete all three parts above, you should be passing all the tests in
-`TestLockManager.java`. If you are failing a specific test, please read through the
-test to see what it is doing and then step through the test using the debugger on your
-IDE to see what case you code is not handling correctly.
-
-### Submitting the Assignment
-After you complete the assignment, simply commit and git push your hw5 branch.
-60% of your grade will come from passing the unit tests we provide to you. 
-40% of your grade will come from passing unit tests that we have not provided to you. 
-If your code does not compile on the VM with maven, we reserve the right to give you a 0 on the assignment.
