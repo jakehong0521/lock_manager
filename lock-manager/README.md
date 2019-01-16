@@ -1,4 +1,4 @@
-# Project 5: Lock Manager
+# Lock Manager
 
 ## API Overview
 You will be implementing the logic for table and page-level locking. The goal of
